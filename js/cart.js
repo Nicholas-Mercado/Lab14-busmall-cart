@@ -19,8 +19,14 @@ function renderCart() {
 }
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
-
+function clearCart() {
+  const tableRows = document.querySelectorAll('#cart tbody tr');
+for (let i = 0; i < tableRows.length; i++) {
+  tableRows[i].remove();
+  
+}
+  
+}
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
@@ -36,7 +42,11 @@ function showCart() {
 function removeItemFromCart(event) {
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
+  removeItem();
+  // do something with json
   // TODO: Save the cart back to local storage
+  // call function that renders table
+  renderCart();
   // TODO: Re-draw the cart table
 
 }
